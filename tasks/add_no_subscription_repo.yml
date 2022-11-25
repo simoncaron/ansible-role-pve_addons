@@ -1,0 +1,6 @@
+---
+- name: Add No Subscription Repository
+  ansible.builtin.apt_repository:
+    repo: deb http://download.proxmox.com/debian/pve {{ ansible_distribution_release }} pve-no-subscription
+    filename: pve-no-subscription
+    state: present

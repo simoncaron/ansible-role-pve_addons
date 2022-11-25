@@ -1,0 +1,16 @@
+---
+- name: Enable Dark Theme
+  ansible.builtin.import_tasks: install_dark_theme.yml
+  when: pve_addons_enable_dark_theme
+
+- name: Removes Subscription Nag Box
+  ansible.builtin.import_tasks: remove_subscription_nag.yml
+  when: pve_addons_remove_subscription_nag
+
+- name: Remove enterprise repo
+  ansible.builtin.import_tasks: remove_enterprise_repo.yml
+  when: pve_addons_remove_enterprise_repo
+
+- name: Add no subcription repo
+  ansible.builtin.import_tasks: add_no_subscription_repo.yml
+  when: pve_addons_add_no_subscription_repo

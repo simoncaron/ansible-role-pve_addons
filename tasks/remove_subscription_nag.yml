@@ -1,0 +1,19 @@
+---
+- name: Create script directory
+  ansible.builtin.file:
+    path: /usr/local/lib/PVENagRemover
+    state: directory
+    mode: '0755'
+
+- name: Copy nag removal script
+  ansible.builtin.copy:
+    src: PVENagRemover.sh
+    dest: /usr/local/lib/PVENagRemover/PVENagRemover.sh
+    mode: "0644"
+  notify: Run nag removal script
+
+- name: Add Nag Removal dpkg Post-Invoke Hook
+  ansible.builtin.copy:
+    src: 99-proxmox-no-nag-script
+    dest: /etc/apt/apt.conf.d/99-proxmox-no-nag-script
+    mode: "0644"

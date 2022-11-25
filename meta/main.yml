@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: pve_addons
+  author: simoncaron
+  description: A role to configure dark mode, repositories, nag removal on Proxmox VE 7.2
+  issue_tracker_url: https://github.com/simoncaron/ansible-role-pve_addons/issues
+  license: MIT
+  min_ansible_version: "2.4"
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+
+  galaxy_tags:
+    - pve
+    - proxmox
+    - theme

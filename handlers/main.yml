@@ -1,0 +1,6 @@
+---
+- name: Run nag removal script
+  ansible.builtin.command: "bash /usr/local/lib/PVENagRemover/PVENagRemover.sh"
+
+- name: Install theme
+  ansible.builtin.command: "bash /usr/local/lib/PVEDiscordDark/PVEDiscordDark.sh -s install"
