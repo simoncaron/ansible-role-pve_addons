@@ -1,7 +1,9 @@
 Ansible Role: Proxmox VE Addons
 =========
 
-![Lint](https://github.com/simoncaron/ansible-role-pve_addons/actions/workflows/lint.yml/badge.svg)
+![Ansible Lint](https://github.com/simoncaron/ansible-role-pve_addons/actions/workflows/lint.yml/badge.svg)
+[![Ansible Role](https://img.shields.io/ansible/role/60994.svg)](https://galaxy.ansible.com/simoncaron/pve_addons)
+[![Ansible Role Downloads](https://img.shields.io/ansible/role/d/60994.svg)](https://galaxy.ansible.com/simoncaron/pve_addons)
 
 An Ansible role that configures enterprise/no-subscription repos, subscription nag removal and enables dark theme on Proxmox VE 7.
 
