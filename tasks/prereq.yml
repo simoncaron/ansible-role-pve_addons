@@ -1,0 +1,9 @@
+---
+- name: Refresh package cache
+  ansible.builtin.apt:
+    update_cache: true
+  failed_when: false  # Proxmox Enterprise Error
+
+- name: Install git
+  ansible.builtin.apt:
+    name: git

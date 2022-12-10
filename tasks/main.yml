@@ -1,4 +1,7 @@
 ---
+- name: Install prerequisites
+  ansible.builtin.import_tasks: prereq.yml
+
 - name: Enable Dark Theme
   ansible.builtin.import_tasks: install_dark_theme.yml
   when: pve_addons_enable_dark_theme

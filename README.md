@@ -12,7 +12,7 @@ Nag removal and dark theme install actions are hooked to package management whic
 Requirements
 ------------
 
-This role requires `git` to be installed on the target host(s).
+This role requires `git` to be installed on the target host(s). It will be installed if needed.
 
 Role Variables
 --------------
