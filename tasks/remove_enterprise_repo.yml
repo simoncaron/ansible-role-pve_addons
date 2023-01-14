@@ -3,3 +3,4 @@
   ansible.builtin.file:
     path: /etc/apt/sources.list.d/pve-enterprise.list
     state: absent
+  notify: Refresh package cache

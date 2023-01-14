@@ -19,5 +19,5 @@
   ansible.builtin.import_tasks: add_no_subscription_repo.yml
   when: pve_addons_add_no_subscription_repo
 
-- name: Force handlers to avoid apt errorr
+- name: Force handlers to avoid apt error
   ansible.builtin.meta: flush_handlers
