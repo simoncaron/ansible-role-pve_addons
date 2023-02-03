@@ -11,6 +11,12 @@
     dest: /usr/local/lib/PVEDiscordDark/offline
     state: link
 
+- name: Copy Theme Install/Update Script
+  ansible.builtin.copy:
+    src: PVEDiscordDarkInstall.sh
+    dest: /usr/local/lib/PVEDiscordDark/PVEDiscordDarkInstall.sh
+    mode: "0644"
+
 - name: Add dark theme dpkg Post-Invoke Hook
   ansible.builtin.copy:
     src: 99-proxmox-dark-theme
