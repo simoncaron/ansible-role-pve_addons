@@ -2,19 +2,8 @@
 - name: Run nag removal script
   ansible.builtin.command: "bash /usr/local/lib/PVENagRemover/PVENagRemover.sh"
 
-- name: Install theme
-  ansible.builtin.command: "bash /usr/local/lib/PVEDiscordDark/PVEDiscordDark.sh -s install"
-  register: install_return
-  failed_when: "install_return.rc == 1"
-  changed_when: "install_return.rc == 0"
-  listen: Run Theme Script
-
-- name: Update theme
-  ansible.builtin.command: "bash /usr/local/lib/PVEDiscordDark/PVEDiscordDark.sh -s install"
-  register: update_return
-  failed_when: "update_return.rc == 1"
-  when: "install_return.rc == 2"
-  listen: Run Theme Script
+- name: Install/Update theme
+  ansible.builtin.command: "bash /usr/local/lib/PVEDiscordDark/PVEDiscordDarkInstall.sh"
 
 - name: Refresh package cache
   ansible.builtin.apt:

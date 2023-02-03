@@ -3,7 +3,7 @@
   ansible.builtin.git:
     repo: https://github.com/Weilbyte/PVEDiscordDark.git
     dest: /usr/local/lib/PVEDiscordDark
-  notify: Run Theme Script
+  notify: Install/Update theme
 
 - name: Create a symbolic link for offline install
   ansible.builtin.file:
