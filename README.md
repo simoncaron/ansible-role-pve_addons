@@ -23,11 +23,13 @@ Available variables are listed below, along with default values (see `defaults/m
 
     pve_addons_remove_subscription_nag: true
 
+    pve_addons_disable_enterprise_repo: false
+
     pve_addons_remove_enterprise_repo: true
 
     pve_addons_add_no_subscription_repo: true
 
-The `pve_addons_enable_dark_theme` key enables the installation of PVEDiscordDark theme. The `pve_addons_add_no_subscription_repo` and `pve_addons_remove_enterprise_repo` keys when enabled, add the no-subscription Proxmox repo and remove the enterprise repo respectively. The `pve_addons_remove_subscription_nag` removes the no subscription warnings in the Proxmox UI. 
+The `pve_addons_enable_dark_theme` key enables the installation of PVEDiscordDark theme. The `pve_addons_add_no_subscription_repo` and `pve_addons_remove_enterprise_repo` keys when enabled, add the no-subscription Proxmox repo and remove the enterprise repo respectively. It is also possible to comment-out the enterprise repo but keep the file by setting `pve_addons_disable_enterprise_repo` to `true` and disabling `pve_addons_remove_enterprise_repo` The `pve_addons_remove_subscription_nag` removes the no subscription warnings in the Proxmox UI. 
 
 
 Dependencies

@@ -13,7 +13,7 @@
 
 - name: Remove enterprise repo
   ansible.builtin.import_tasks: remove_enterprise_repo.yml
-  when: pve_addons_remove_enterprise_repo
+  when: pve_addons_remove_enterprise_repo or pve_addons_disable_enterprise_repo
 
 - name: Add no subcription repo
   ansible.builtin.import_tasks: add_no_subscription_repo.yml

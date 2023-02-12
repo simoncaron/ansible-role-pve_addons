@@ -5,6 +5,8 @@ pve_addons_enable_dark_theme: true
 
 pve_addons_remove_subscription_nag: true
 
+pve_addons_disable_enterprise_repo: false
+
 pve_addons_remove_enterprise_repo: true
 
 pve_addons_add_no_subscription_repo: true
