@@ -1,21 +1,24 @@
 ---
 - name: Check if enterprise repo file exists
   ansible.builtin.stat:
-    path: /etc/apt/sources.list.d/pve-enterprise.list
-  register: enterprise_repo_file
+    path: "/etc/apt/sources.list.d/{{ item }}"
+  register: enterprise_repo_files
   changed_when: false
+  with_items: "{{ pve_subscription_repos }}"
 
 - name: Ensure enterprise repo is not enabled
   ansible.builtin.replace:
-    path: /etc/apt/sources.list.d/pve-enterprise.list
+    path: "/etc/apt/sources.list.d/{{ item.item }}"
     regexp: "^deb "
     replace: '# \g<0>'
   notify: Refresh package cache
-  when: pve_addons_disable_enterprise_repo and enterprise_repo_file.stat.exists
+  when: pve_addons_disable_enterprise_repo and item.stat.exists
+  with_items: "{{ enterprise_repo_files.results }}"
 
 - name: Ensure enterprise repo file is not present
   ansible.builtin.file:
-    path: /etc/apt/sources.list.d/pve-enterprise.list
+    path: "/etc/apt/sources.list.d/{{ item }}"
     state: absent
   notify: Refresh package cache
   when: pve_addons_remove_enterprise_repo
+  with_items: "{{ pve_subscription_repos }}"

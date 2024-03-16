@@ -1,2 +1,5 @@
 ---
 # vars file for ansible-role-pve_addons/
+pve_subscription_repos:
+  - pve-enterprise.list
+  - ceph.list
