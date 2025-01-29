@@ -1,7 +1,7 @@
 ---
 # defaults file for ansible-role-pve_addons/
 
-pve_addons_enable_dark_theme: true
+pve_addons_enable_dark_theme: false
 
 pve_addons_remove_subscription_nag: true
 
